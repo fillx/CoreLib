@@ -1,9 +1,9 @@
 {
   "name": "com.some.package",
   "version": "0.0.1",
-  "displayName": "Morpeh.Game.Core",
-  "description": "Morpeh Core Features",
-  "unity": "6000.0",
+  "displayName": "Game.Core",
+  "description": "Game Core Features",
+  "unity": "6.0",
   "unityRelease": "0b5",
   "documentationUrl": "https://example.com/",
   "changelogUrl": "https://example.com/changelog.html",
