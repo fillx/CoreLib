@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace GameConfig
+namespace GameSettings
 {
     public interface ISettingsProvider
     {

@@ -1,4 +1,4 @@
-namespace Game.State.cmd
+namespace Command
 {
     public interface ICommand { }
 }

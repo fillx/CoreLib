@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace GameConfig.Providers
+namespace GameSettings.Providers
 {
     public class ResourcesSettingsProvider : ISettingsProvider
     {
