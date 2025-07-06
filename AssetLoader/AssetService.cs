@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Pool;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Assets
 {
@@ -49,13 +50,12 @@ namespace Assets
             );
         }
 
-        public async Task<PoolableAssetInstanceHandle<T>> InstantiateFromPoolAsync<T>(string key, IPool<T> pool,
-            IProgress<float> progress = null) where T : UnityEngine.Object
+        public Task<PoolableAssetInstanceHandle<T>> InstantiateFromPoolAsync<T>(string key, IPool<T> pool, IProgress<float> progress = null) where T : Object
         {
-            var handle = await LoadAsync<T>(key, progress);
-            T instance = pool.Spawn(handle.Asset);
-            return new PoolableAssetInstanceHandle<T>(key, instance, pool);
+            throw new NotImplementedException();
         }
+
+      
 
         public void Release<T>(T asset) where T : UnityEngine.Object
         {

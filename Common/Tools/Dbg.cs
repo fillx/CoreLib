@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tools
+namespace Common
 {
     public static class Dbg
     {

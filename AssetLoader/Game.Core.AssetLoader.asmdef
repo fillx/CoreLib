@@ -1,0 +1,9 @@
+{
+  "name": "Game.Core.AssetLoader",
+  "references": [
+    "Unity.Addressables",
+    "Unity.ResourceManager",
+    "Game.Core.Common",
+    "Game.Core.Pooling"
+  ]
+}
