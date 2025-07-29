@@ -1,0 +1,13 @@
+{
+  "name": "Game.Core.GameState",
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "references":[ "GUID:d83c8a6008754ec3b1f86fa7d2e8593e" ]
+}

@@ -19,7 +19,7 @@ namespace Entrypoint
 
         public void Initialize()
         {
-            Dbg.Log("Initializing game...");
+            Dbg.Log($"Initializing game...", Color.darkOrange);
 
             Application.targetFrameRate = 60;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
