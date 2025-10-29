@@ -4,7 +4,7 @@ namespace GameState
 {
     public interface IGameState
     {
-        Task Enter();
-        Task Exit();
+        void Enter();
+        void Exit();
     }
 }

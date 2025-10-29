@@ -16,7 +16,7 @@ namespace GameConfigs
             _provider = provider;
         }
 
-        public async Task InitAsync()
+        public async Task Init()
         {
             Dbg.Log("InitAsync started");
             foreach (var type in GetRequiredConfigs())
@@ -24,7 +24,7 @@ namespace GameConfigs
                 Dbg.Log($"Loading config: {type.Name}");
                 var config = await _provider.LoadConfigAsync(type);
                 if (!config)
-                    throw new Exception($"Failed to load config of type {type.Name}");
+                    Dbg.LogError($"Config not found: {type.Name}");
 
                 _cache[type] = config;
             }
@@ -44,10 +44,7 @@ namespace GameConfigs
             config = null;
             return false;
         }
-
-        // Определяет список конфигов, которые должны быть загружены при запуске (InitAsync).
-        // Если тип не указан в этом списке, он не будет загружен автоматически.
-        // TODO: добавить ленивую загрузку конфигов по запросу через GetOrLoadConfigAsync.
+        
         protected abstract Type[] GetRequiredConfigs();
     }
 }

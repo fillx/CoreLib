@@ -1,0 +1,1 @@
+делаем игру Fallout Shelter

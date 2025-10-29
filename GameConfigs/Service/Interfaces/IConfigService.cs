@@ -5,7 +5,7 @@ namespace GameConfigs
 {
     public interface IConfigService
     {
-        Task InitAsync(); 
+        Task Init(); 
         bool TryGetConfig<T>(out T config) where T : ScriptableObject;
     }
 }

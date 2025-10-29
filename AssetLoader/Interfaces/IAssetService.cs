@@ -12,6 +12,7 @@ namespace AssetLoader
         
         Task Preload(IEnumerable<AssetReference> references, CancellationToken token = default);
 
+        //TODO В будущем необходимо научится выгружать ассеты которые на уровне
         void Release(UnityEngine.Object asset);
         void Release(AssetReference reference);
         bool IsLoaded(AssetReference reference);

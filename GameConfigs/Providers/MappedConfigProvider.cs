@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Common;
 using UnityEngine;
 
 namespace GameConfigs
@@ -20,7 +21,10 @@ namespace GameConfigs
         public async Task<ScriptableObject> LoadConfigAsync(Type type)
         {
             if (!_bindings.TryGetValue(type, out var provider))
-                throw new Exception($"No provider mapped for config type {type.Name}");
+            {
+                Dbg.LogError($"Config not found: {type.Name}");
+                return null;
+            }
 
             return await provider.LoadConfigAsync(type);
         }

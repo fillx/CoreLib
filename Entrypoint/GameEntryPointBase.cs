@@ -25,13 +25,13 @@ namespace Entrypoint
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
             SetupInfrastructure();
-            RunGame();
+            Init();
         }
 
 
         protected abstract void RegisterServices();
 
-        protected abstract Task  RunGame();
+        protected abstract Task  Init();
 
 
         protected virtual void SetupInfrastructure()

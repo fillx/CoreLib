@@ -24,5 +24,11 @@ namespace Common
             string hexColor = ColorUtility.ToHtmlStringRGB(Color.yellowNice);
             Debug.LogError($"<color=#{hexColor}>{message}</color>");
         }
+
+        public static void LogInfra(string message)
+        {
+            string hexColor = ColorUtility.ToHtmlStringRGB(Color.orangeRed);
+            Debug.LogError($"Infra: <color=#{hexColor}>{message}</color>");
+        }
     }
 }

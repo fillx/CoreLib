@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Common;
 
 namespace DI
 {
@@ -62,6 +64,7 @@ namespace DI
 
             if (_resolutionsCache.Contains(key))
             {
+                Dbg.LogInfra($"DI: Cyclic dependency for tag {key.tag} and type {key.Item2.FullName}");
                 throw new Exception($"DI: Cyclic dependency for tag {key.tag} and type {key.Item2.FullName}");
             }
 
@@ -84,12 +87,17 @@ namespace DI
                 _resolutionsCache.Remove(key);
             }
 
+            Dbg.LogInfra($"Couldn't find dependency for tag {tag} and type {key.Item2.FullName}");
             throw new Exception($"Couldn't find dependency for tag {tag} and type {key.Item2.FullName}");
         }
 
         public void Dispose()
         {
             var entries = _entriesMap.Values;
+            
+            //TODO Удалить после релиза
+            var typeNames = _entriesMap.Keys.Select(k => k.Item2.Name);
+            Dbg.LogInfra($"Container with: {string.Join(", ", typeNames)} Disposed");
 
             foreach (var entry in entries)
             {

@@ -18,14 +18,14 @@ namespace GameState
             _states = states.ToDictionary(s => s.GetType(), s => s);
         }
 
-        public async Task ChangeState<T>() where T : IGameState
+        public void ChangeState<T>() where T : IGameState
         {
             if (_currentState != null)
-                await _currentState.Exit();
+                 _currentState.Exit();
 
             _currentState = _states[typeof(T)];
             Dbg.Log($"Change game state to: {_currentState.GetType().Name}", Color.darkOrange);
-            await _currentState.Enter();
+             _currentState.Enter();
         }
     }
 }
