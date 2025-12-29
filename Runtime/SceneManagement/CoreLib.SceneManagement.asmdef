@@ -3,6 +3,7 @@
   "references": [
     "Unity.Addressables",
     "Unity.ResourceManager",
-    "Game.Core.Common"
+    "Game.Core.Common",
+    "CoreLib.Common"
   ]
 }

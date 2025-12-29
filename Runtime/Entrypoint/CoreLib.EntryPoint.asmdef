@@ -3,7 +3,8 @@
   "references": [
     "Game.Core.Common",
     "CoreLib.DI",
-    "CoreLib.Ui"
+    "CoreLib.Ui",
+    "CoreLib.Common"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
