@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Morpeh.Game.Core.MVVM.Ui
+namespace CoreLib.MVVM.Ui
 {
     public class WindowsContainer : MonoBehaviour
     {

@@ -1,6 +1,6 @@
-using Morpeh.Game.Core.DI;
+using CoreLib.DI;
 
-namespace Morpeh.Game.Core.MVVM.Ui
+namespace CoreLib.MVVM.Ui
 {
     public abstract class UiManager
     {

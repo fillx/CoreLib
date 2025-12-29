@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Morpeh.Game.Core.MVVM.Ui
+namespace CoreLib.MVVM.Ui
 {
     public abstract class WindowBinder<T> : MonoBehaviour, IWindowBinder where T : WindowViewModel
     {

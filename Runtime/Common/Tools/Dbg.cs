@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Morpeh.Game.Core.Common.Tools
+namespace CoreLib.Common
 {
     public static class Dbg
     {

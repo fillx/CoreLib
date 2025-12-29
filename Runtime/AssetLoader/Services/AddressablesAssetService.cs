@@ -2,12 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Morpeh.Game.Core.AssetLoader.Interfaces;
-using Morpeh.Game.Core.AssetLoader.Manager;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace Morpeh.Game.Core.AssetLoader.Services
+namespace CoreLib.AssetLoader
 {
     public class AddressablesAssetService : IAssetService
     {

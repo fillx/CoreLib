@@ -1,4 +1,4 @@
-namespace Morpeh.Game.Core.Entrypoint
+namespace CoreLib.Entrypoint
 {
     public interface IGameEntryFactory
     {

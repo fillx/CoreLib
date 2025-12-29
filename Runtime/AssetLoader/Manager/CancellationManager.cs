@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace Morpeh.Game.Core.AssetLoader.Manager
+namespace CoreLib.AssetLoader
 {
     internal class CancellationManager
     {

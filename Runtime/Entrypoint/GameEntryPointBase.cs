@@ -1,11 +1,10 @@
 using System.Threading.Tasks;
-using Morpeh.Game.Core.Common.Tools;
-using Morpeh.Game.Core.DI;
-using Morpeh.Game.Core.Ui;
+using CoreLib.DI;
+using CoreLib.Ui;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Morpeh.Game.Core.Entrypoint
+namespace CoreLib.Entrypoint
 {
     public abstract class GameEntryPointBase
     {

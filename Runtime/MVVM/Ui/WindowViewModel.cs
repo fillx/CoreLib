@@ -1,7 +1,7 @@
 using System;
 using R3;
 
-namespace Morpeh.Game.Core.MVVM.Ui
+namespace CoreLib.MVVM.Ui
 {
     public abstract class WindowViewModel : IDisposable
     {

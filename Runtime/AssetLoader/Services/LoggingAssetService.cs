@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Morpeh.Game.Core.AssetLoader.Interfaces;
-using Morpeh.Game.Core.Common.Tools;
+using Common;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Morpeh.Game.Core.AssetLoader.Services
+namespace CoreLib.AssetLoader
 {
     public class LoggingAssetService : IAssetService
     {

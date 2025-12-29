@@ -1,13 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Morpeh.Game.Core.Common.Tools;
-using Morpeh.Game.Core.SceneManagement.Interfaces;
-using Morpeh.Game.Core.SceneManagement.Model;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 
-namespace Morpeh.Game.Core.SceneManagement.Services
+namespace CoreLib.SceneManagement
 {
     public class SceneService : ISceneService
     {

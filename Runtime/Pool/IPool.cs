@@ -1,4 +1,4 @@
-namespace Morpeh.Game.Core.Pool
+namespace CoreLib.Pool
 {
     public interface IPool<T> where T : UnityEngine.Object
     {

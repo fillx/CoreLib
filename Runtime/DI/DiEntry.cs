@@ -1,6 +1,6 @@
 using System;
 
-namespace Morpeh.Game.Core.DI
+namespace CoreLib.DI
 {
     
     public abstract class DIEntry : IDisposable

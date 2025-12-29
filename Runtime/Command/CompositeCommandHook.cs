@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Morpeh.Game.Core.Command
+namespace CoreLib.Command
 {
     public class CompositeCommandHook : ICommandPipelineHook
     {

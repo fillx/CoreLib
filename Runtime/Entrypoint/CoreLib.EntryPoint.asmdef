@@ -1,11 +1,9 @@
 {
-  "name": "CoreLib.AssetLoader",
+  "name": "CoreLib.EntryPoint",
   "references": [
-    "Unity.Addressables",
-    "Unity.ResourceManager",
     "Game.Core.Common",
-    "CoreLib.Pooling",
-    "CoreLib.Common"
+    "CoreLib.DI",
+    "CoreLib.Ui"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

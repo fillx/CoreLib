@@ -1,0 +1,9 @@
+{
+  "name": "CoreLib.Mvvm",
+  "references": [
+    "Unity.Addressables",
+    "Unity.ResourceManager",
+    "CoreLib.DI"
+  ],
+  "autoReferenced": true
+}

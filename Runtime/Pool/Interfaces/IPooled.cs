@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-namespace Morpeh.Game.Core.Pool.Interfaces
+namespace CoreLib.Pool.Interfaces
 {
     public interface IPooled
     {

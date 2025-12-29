@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
-namespace Morpeh.Game.Core.AssetLoader.Interfaces
+namespace CoreLib.AssetLoader
 {
     public interface IAssetService
     {

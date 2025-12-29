@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Morpeh.Game.Core.MVVM.Ui
+namespace CoreLib.MVVM.Ui
 {
     public abstract class PopupBinder<T> : WindowBinder<T> where T : WindowViewModel
     {

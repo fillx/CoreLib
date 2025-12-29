@@ -1,4 +1,4 @@
-namespace Morpeh.Game.Core.Command
+namespace CoreLib.Command
 {
     public interface ICommandPipelineHook 
     {

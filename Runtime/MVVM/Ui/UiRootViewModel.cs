@@ -5,7 +5,7 @@ using ObservableCollections;
 using R3;
 using UnityEngine;
 
-namespace Morpeh.Game.Core.MVVM.Ui
+namespace CoreLib.MVVM.Ui
 {
     public class UiRootViewModel : IDisposable
     {

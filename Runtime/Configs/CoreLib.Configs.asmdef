@@ -1,11 +1,9 @@
 {
-  "name": "CoreLib.AssetLoader",
+  "name": "CoreLib.Configs",
   "references": [
     "Unity.Addressables",
     "Unity.ResourceManager",
-    "Game.Core.Common",
-    "CoreLib.Pooling",
-    "CoreLib.Common"
+    "Game.Core.Common"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

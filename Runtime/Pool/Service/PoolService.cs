@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Morpeh.Game.Core.Pool.Interfaces;
+using CoreLib.Pool.Interfaces;
 using UnityEngine;
 
-namespace Morpeh.Game.Core.Pool.Service
+namespace CoreLib.Pool.Service
 {
     public class PoolService : IPoolService
     {

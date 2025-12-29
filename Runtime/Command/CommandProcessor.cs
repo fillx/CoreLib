@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Morpeh.Game.Core.Command
+namespace CoreLib.Command
 {
     public class CommandProcessor : ICommandProcessor
     {

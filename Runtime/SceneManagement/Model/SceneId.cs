@@ -1,6 +1,6 @@
 using System;
 
-namespace Morpeh.Game.Core.SceneManagement.Model
+namespace CoreLib.SceneManagement
 {
     [Serializable]
     public struct SceneId<TEnum> where TEnum : Enum

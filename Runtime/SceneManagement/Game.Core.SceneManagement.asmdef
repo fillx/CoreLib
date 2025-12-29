@@ -1,8 +1,0 @@
-{
-  "name": "Game.Core.SceneManagement",
-  "references": [
-    "Unity.Addressables",
-    "Unity.ResourceManager",
-    "Game.Core.Common"
-  ]
-}

@@ -1,4 +1,4 @@
-namespace Morpeh.Game.Core.Ui
+namespace CoreLib.Ui
 {
     public interface IUiRoot
     {

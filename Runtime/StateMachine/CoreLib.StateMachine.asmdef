@@ -1,12 +1,5 @@
 {
-  "name": "CoreLib.AssetLoader",
-  "references": [
-    "Unity.Addressables",
-    "Unity.ResourceManager",
-    "Game.Core.Common",
-    "CoreLib.Pooling",
-    "CoreLib.Common"
-  ],
+  "name": "CoreLib.StateMachine",
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
@@ -15,5 +8,6 @@
   "autoReferenced": true,
   "defineConstraints": [],
   "versionDefines": [],
-  "noEngineReferences": false
+  "noEngineReferences": false,
+  "references":[ "GUID:d83c8a6008754ec3b1f86fa7d2e8593e" ]
 }

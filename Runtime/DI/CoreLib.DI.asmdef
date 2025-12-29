@@ -1,0 +1,6 @@
+{
+  "name": "CoreLib.DI",
+  "references": [
+    "CoreLib.Common"
+  ]
+}

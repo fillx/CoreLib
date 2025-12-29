@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Morpeh.Game.Core.SceneManagement.Model
+namespace CoreLib.SceneManagement
 {
     [CreateAssetMenu(fileName = "SceneConfig", menuName = "Game/Config/SceneConfig")]
     public class SceneConfig : ScriptableObject

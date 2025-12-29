@@ -1,8 +1,0 @@
-{
-  "name": "Game.Core.MVVM",
-  "references": [
-    "Unity.Addressables",
-    "Unity.ResourceManager",
-    "Game.Core.DI"
-  ]
-}

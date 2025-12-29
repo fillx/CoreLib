@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Morpeh.Game.Core.Entrypoint
+namespace CoreLib.Entrypoint
 {
     public class Coroutines : MonoBehaviour { }
 }

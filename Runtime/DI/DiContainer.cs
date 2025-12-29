@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Morpeh.Game.Core.Common.Tools;
 
-namespace Morpeh.Game.Core.DI
+namespace CoreLib.DI
 {
     public class DiContainer : IDisposable
     {
