@@ -1,0 +1,7 @@
+{
+  "name": "CoreLib.Command",
+  "references": [
+    "Unity.Addressables",
+    "Unity.ResourceManager"
+  ]
+}

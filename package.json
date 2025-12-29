@@ -1,24 +1,7 @@
 {
-  "name": "com.some.package",
-  "version": "0.0.1",
-  "displayName": "Game.Core",
-  "description": "Game Core Features",
-  "unity": "6.0",
-  "unityRelease": "0b5",
-  "documentationUrl": "https://example.com/",
-  "changelogUrl": "https://example.com/changelog.html",
-  "licensesUrl": "https://example.com/licensing.html",
-  "dependencies": {
-    
-  },
-  "keywords": [
-    "keyword1",
-    "keyword2",
-    "keyword3"
-  ],
-  "author": {
-    "name": "Unity",
-    "email": "unity@example.com",
-    "url": "https://www.unity3d.com"
-  }
+  "name": "com.yourname.corelib",
+  "version": "0.1.0",
+  "displayName": "CoreLib",
+  "description": "Reusable core framework",
+  "unity": "6000.0"
 }
