@@ -1,4 +1,6 @@
 namespace CoreLib.Command
 {
-    public interface ICommand { }
+    public interface ICommand
+    {
+    }
 }

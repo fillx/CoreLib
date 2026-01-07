@@ -26,10 +26,8 @@ namespace CoreLib.DI
             var key = (tag, typeof(T));
 
             if (_entriesMap.ContainsKey(key))
-            {
                 throw new Exception(
                     $"DI: Factory with tag {key.Item1} and type {key.Item2.FullName} has already registered");
-            }
 
             var diEntry = new DIEntry<T>(this, factory);
 
@@ -48,10 +46,8 @@ namespace CoreLib.DI
             var key = (tag, typeof(T));
 
             if (_entriesMap.ContainsKey(key))
-            {
                 throw new Exception(
                     $"DI: Instance with tag {key.Item1} and type {key.Item2.FullName} has already registered");
-            }
 
             var diEntry = new DIEntry<T>(instance);
 
@@ -72,15 +68,9 @@ namespace CoreLib.DI
 
             try
             {
-                if (_entriesMap.TryGetValue(key, out var diEntry))
-                {
-                    return diEntry.Resolve<T>();
-                }
+                if (_entriesMap.TryGetValue(key, out var diEntry)) return diEntry.Resolve<T>();
 
-                if (_parentContainer != null)
-                {
-                    return _parentContainer.Resolve<T>(tag);
-                }
+                if (_parentContainer != null) return _parentContainer.Resolve<T>(tag);
             }
             finally
             {
@@ -94,15 +84,12 @@ namespace CoreLib.DI
         public void Dispose()
         {
             var entries = _entriesMap.Values;
-            
+
             //TODO Удалить после релиза
             var typeNames = _entriesMap.Keys.Select(k => k.Item2.Name);
             Dbg.LogInfra($"Container with: {string.Join(", ", typeNames)} Disposed");
 
-            foreach (var entry in entries)
-            {
-                entry.Dispose();
-            }
+            foreach (var entry in entries) entry.Dispose();
         }
     }
 }

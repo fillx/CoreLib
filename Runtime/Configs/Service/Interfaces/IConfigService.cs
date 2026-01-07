@@ -5,7 +5,7 @@ namespace CoreLib.Configs.Service.Interfaces
 {
     public interface IConfigService
     {
-        Task Init(); 
+        Task Init();
         bool TryGetConfig<T>(out T config) where T : ScriptableObject;
     }
 }

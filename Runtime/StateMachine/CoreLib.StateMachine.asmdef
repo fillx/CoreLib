@@ -9,5 +9,7 @@
   "defineConstraints": [],
   "versionDefines": [],
   "noEngineReferences": false,
-  "references":[ "GUID:d83c8a6008754ec3b1f86fa7d2e8593e" ]
+  "references": [
+    "GUID:d83c8a6008754ec3b1f86fa7d2e8593e"
+  ]
 }

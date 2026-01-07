@@ -30,7 +30,7 @@ namespace CoreLib.Configs.Providers
                 Debug.LogWarning($"No Addressable config reference found for {type.Name}");
                 return null;
             }
-         
+
             var key = entry.configReference;
             AsyncOperationHandle<ScriptableObject> handle;
 
@@ -39,10 +39,7 @@ namespace CoreLib.Configs.Providers
                 handle = Addressables.LoadAssetAsync<ScriptableObject>(key);
                 await handle.Task;
 
-                if (handle.Status == AsyncOperationStatus.Succeeded)
-                {
-                    return handle.Result;
-                }
+                if (handle.Status == AsyncOperationStatus.Succeeded) return handle.Result;
 
                 Debug.LogWarning($"[Addressables] Failed to load {key}, status: {handle.Status}");
                 return null;
@@ -50,7 +47,7 @@ namespace CoreLib.Configs.Providers
             catch (Exception ex)
             {
                 Debug.LogWarning($"[Addressables] Exception while loading {key}: {ex.Message}");
-                return null; 
+                return null;
             }
         }
     }

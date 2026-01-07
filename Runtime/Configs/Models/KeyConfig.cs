@@ -16,7 +16,6 @@ namespace CoreLib.Configs.Models
     {
         [HideInInspector] public string typeName;
 
-        [SerializeField]
-        public AssetReference configReference;
+        [SerializeField] public AssetReference configReference;
     }
 }

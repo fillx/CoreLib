@@ -16,14 +16,14 @@ namespace CoreLib.Pool.Service
 
         public GameObject Spawn(GameObject prefab)
         {
-            if (!_pool.TryGetValue(prefab, out var queue)) 
+            if (!_pool.TryGetValue(prefab, out var queue))
             {
                 queue = new Queue<GameObject>();
                 _pool[prefab] = queue;
             }
 
             GameObject instance;
-            if (queue.Count > 0) 
+            if (queue.Count > 0)
             {
                 instance = queue.Dequeue();
                 instance.SetActive(true);
@@ -35,15 +35,12 @@ namespace CoreLib.Pool.Service
 
             // Автоматическое назначение ссылки на оригинальный префаб
             var pooled = instance.GetComponent<IPooled>();
-            if (pooled != null)
-            {
-                pooled.Prefab = prefab;
-            }
+            if (pooled != null) pooled.Prefab = prefab;
 
             return instance;
         }
 
-        public void Despawn(GameObject instance) 
+        public void Despawn(GameObject instance)
         {
             instance.SetActive(false);
             instance.transform.SetParent(_root, false);
@@ -51,15 +48,16 @@ namespace CoreLib.Pool.Service
             var pooled = instance.GetComponent<IPooled>();
             var prefabId = pooled?.Prefab;
 
-            if (prefabId != null) 
+            if (prefabId != null)
             {
-                if (!_pool.TryGetValue(prefabId, out var queue)) 
+                if (!_pool.TryGetValue(prefabId, out var queue))
                 {
                     queue = new Queue<GameObject>();
                     _pool[prefabId] = queue;
                 }
+
                 queue.Enqueue(instance);
-            } 
+            }
             else
             {
                 Object.Destroy(instance); // fallback если без IPooled
@@ -68,17 +66,14 @@ namespace CoreLib.Pool.Service
 
         public void Clear()
         {
-            foreach (var queue in _pool.Values) 
-            {
-                foreach (var obj in queue)
-                {
-                    Object.Destroy(obj);
-                }
-            }
+            foreach (var queue in _pool.Values)
+            foreach (var obj in queue)
+                Object.Destroy(obj);
+
             _pool.Clear();
         }
 
-        private static Transform CreateDefaultRoot() 
+        private static Transform CreateDefaultRoot()
         {
             var go = new GameObject("[PoolRoot]");
             Object.DontDestroyOnLoad(go);

@@ -14,7 +14,9 @@ namespace CoreLib.MVVM.Ui
         {
             _closeRequested.OnNext(this);
         }
-        
-        public virtual void Dispose() {}
+
+        public virtual void Dispose()
+        {
+        }
     }
 }

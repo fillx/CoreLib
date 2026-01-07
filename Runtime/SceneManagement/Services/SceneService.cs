@@ -19,15 +19,13 @@ namespace CoreLib.SceneManagement
         public async Task LoadSceneAsync(string sceneId, LoadSceneMode mode = LoadSceneMode.Single,
             Action<float> onProgress = null)
         {
-
-
-            SceneConfigEntry descriptor = config.GetScene(sceneId);
+            var descriptor = config.GetScene(sceneId);
             if (descriptor == null)
             {
                 Dbg.LogError("Scene not found: " + sceneId);
                 return;
             }
-            
+
 #if UNITY_EDITOR
             if (SceneManager.GetActiveScene().name == descriptor.Key.editorAsset.name)
                 return;

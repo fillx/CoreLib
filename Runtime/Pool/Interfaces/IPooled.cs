@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace CoreLib.Pool.Interfaces

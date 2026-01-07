@@ -30,7 +30,7 @@ namespace CoreLib.Entrypoint
 
         protected abstract void RegisterServices();
 
-        protected abstract Task  Init();
+        protected abstract Task Init();
 
 
         protected virtual void SetupInfrastructure()

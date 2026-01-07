@@ -1,6 +1,6 @@
 namespace CoreLib.Command
 {
-    public interface ICommandPipelineHook 
+    public interface ICommandPipelineHook
     {
         void OnCommandHandled<TCommand>(TCommand command, bool success) where TCommand : ICommand;
     }

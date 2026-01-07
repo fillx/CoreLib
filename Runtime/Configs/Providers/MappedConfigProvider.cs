@@ -17,7 +17,10 @@ namespace CoreLib.Configs.Providers
             return this;
         }
 
-        public bool CanProvide(Type type) => _bindings.ContainsKey(type);
+        public bool CanProvide(Type type)
+        {
+            return _bindings.ContainsKey(type);
+        }
 
         public async Task<ScriptableObject> LoadConfigAsync(Type type)
         {

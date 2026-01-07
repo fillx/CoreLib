@@ -24,14 +24,12 @@ namespace CoreLib.Configs.Providers
         public async Task<ScriptableObject> LoadConfigAsync(Type type)
         {
             foreach (var provider in _providers)
-            {
                 if (provider.CanProvide(type))
                 {
                     var config = await provider.LoadConfigAsync(type);
                     if (config != null)
                         return config;
                 }
-            }
 
             throw new Exception($"No provider found for config type {type.Name}");
         }

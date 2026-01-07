@@ -18,7 +18,8 @@ namespace CoreLib.MVVM.Ui
             Destroy(gameObject);
         }
 
-        protected virtual void OnBind(T viewModel){}
-      
+        protected virtual void OnBind(T viewModel)
+        {
+        }
     }
 }

@@ -23,13 +23,11 @@ namespace CoreLib.AssetLoader
         {
             Dbg.Log($"[AssetService] ActiveAssetCount = {_inner.ActiveAssetCount}");
             if (_inner.ActiveAssetCount > WarningThreshold)
-            {
                 Debug.LogWarning($"[AssetService] WARNING: ActiveAssetCount exceeded threshold ({WarningThreshold})");
-            }
         }
 
         public async Task<T> LoadAsset<T>(AssetReference reference, CancellationToken token = default)
-            where T : UnityEngine.Object
+            where T : Object
         {
             Debug.Log($"[AssetService] Loading asset: {reference.RuntimeKey}");
             var result = await _inner.LoadAsset<T>(reference, token);
@@ -45,13 +43,13 @@ namespace CoreLib.AssetLoader
             LogCount();
         }
 
-        public void Release(UnityEngine.Object asset)
+        public void Release(Object asset)
         {
             Debug.Log($"[AssetService] Releasing asset: {asset.name}");
             _inner.Release(asset);
             LogCount();
         }
-        
+
         public void Release(AssetReference asset)
         {
             Debug.Log($"[AssetService] Releasing asset: {asset.Asset.name}");
@@ -72,8 +70,8 @@ namespace CoreLib.AssetLoader
             _inner.Clear();
             LogCount();
         }
-        
-        public void CancelAll() 
+
+        public void CancelAll()
         {
             Debug.Log("[AssetService] Cancelling all loads");
             _inner.CancelAll();

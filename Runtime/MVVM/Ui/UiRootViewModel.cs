@@ -11,7 +11,7 @@ namespace CoreLib.MVVM.Ui
     {
         public ReadOnlyReactiveProperty<WindowViewModel> OpenedScreen => _openedScreen;
         public IObservableCollection<WindowViewModel> OpenedPopups => _openedPopups;
-        
+
         private readonly ReactiveProperty<WindowViewModel> _openedScreen = new(null);
         private readonly ObservableList<WindowViewModel> _openedPopups = new();
         private readonly Dictionary<WindowViewModel, IDisposable> _popupSubscriptions = new();
@@ -21,7 +21,7 @@ namespace CoreLib.MVVM.Ui
             _openedScreen.Value?.Dispose();
             _openedScreen.Value = screenViewModel;
         }
-        
+
         public void Dispose()
         {
             CloseAllPopups();
@@ -38,7 +38,7 @@ namespace CoreLib.MVVM.Ui
 
             var subscribe = popupViewModel.CloseRequested.Subscribe(ClosePopup);
             _popupSubscriptions.Add(popupViewModel, subscribe);
-            
+
             _openedPopups.Add(popupViewModel);
         }
 
@@ -48,7 +48,7 @@ namespace CoreLib.MVVM.Ui
             {
                 popupViewModel.Dispose();
                 _openedPopups.Remove(popupViewModel);
-                
+
                 var unsubscribe = _popupSubscriptions[popupViewModel];
                 unsubscribe?.Dispose();
                 _openedPopups.Remove(popupViewModel);
@@ -63,10 +63,7 @@ namespace CoreLib.MVVM.Ui
 
         public void CloseAllPopups()
         {
-            foreach (var openedPopup in _openedPopups)
-            {
-                ClosePopup(openedPopup);
-            }
+            foreach (var openedPopup in _openedPopups) ClosePopup(openedPopup);
         }
     }
 }

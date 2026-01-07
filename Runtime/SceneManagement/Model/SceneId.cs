@@ -15,9 +15,19 @@ namespace CoreLib.SceneManagement
         public string Name => _value.ToString();
         public TEnum Value => _value;
 
-        public override string ToString() => Name;
+        public override string ToString()
+        {
+            return Name;
+        }
 
-        public static implicit operator TEnum(SceneId<TEnum> id) => id._value;
-        public static implicit operator SceneId<TEnum>(TEnum value) => new SceneId<TEnum>(value);
+        public static implicit operator TEnum(SceneId<TEnum> id)
+        {
+            return id._value;
+        }
+
+        public static implicit operator SceneId<TEnum>(TEnum value)
+        {
+            return new SceneId<TEnum>(value);
+        }
     }
 }

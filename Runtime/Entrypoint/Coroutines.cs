@@ -2,5 +2,7 @@ using UnityEngine;
 
 namespace CoreLib.Entrypoint
 {
-    public class Coroutines : MonoBehaviour { }
+    public class Coroutines : MonoBehaviour
+    {
+    }
 }

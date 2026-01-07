@@ -20,19 +20,16 @@ namespace CoreLib.SceneManagement
         private Dictionary<string, SceneConfigEntry> BuildMap()
         {
             var map = new Dictionary<string, SceneConfigEntry>();
-            foreach (var scene in Scenes)
-            {
-                map[scene.SceneId] = scene;
-            }
+            foreach (var scene in Scenes) map[scene.SceneId] = scene;
             return map;
         }
     }
-    
+
     [System.Serializable]
     public class SceneConfigEntry
     {
         //TODO заменить string на enum
         public string SceneId;
-        public AssetReference Key;     
+        public AssetReference Key;
     }
 }

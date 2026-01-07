@@ -40,8 +40,7 @@ namespace CoreLib.Configs.Editor
 
                 EditorUtility.SetDirty(keyConfig);
             }
-        
-        
+
 
             serializedObject.ApplyModifiedProperties();
         }

@@ -12,7 +12,7 @@ namespace CoreLib.Command
         {
             _pipelineHook = pipelineHook;
         }
-        
+
         public void RegisterHandler<TCommand>(ICommandHandler<TCommand> handler) where TCommand : ICommand
         {
             _handlersMap[typeof(TCommand)] = handler;
@@ -20,7 +20,7 @@ namespace CoreLib.Command
 
         public bool Process<TCommand>(TCommand command) where TCommand : ICommand
         {
-            bool success = false;
+            var success = false;
 
             if (_handlersMap.TryGetValue(typeof(TCommand), out var handler))
             {

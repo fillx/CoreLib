@@ -46,7 +46,7 @@ namespace CoreLib.Configs.Service
             config = null;
             return false;
         }
-        
+
         protected abstract Type[] GetRequiredConfigs();
     }
 }

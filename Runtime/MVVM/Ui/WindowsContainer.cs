@@ -17,7 +17,7 @@ namespace CoreLib.MVVM.Ui
             var prefab = Resources.Load<GameObject>(prefabPath);
             var instance = Instantiate(prefab, _popupsContainer);
             var binder = instance.GetComponent<IWindowBinder>();
-            
+
             binder.Bind(viewModel);
             _openedPopupBinders.Add(viewModel, binder);
         }
@@ -25,25 +25,22 @@ namespace CoreLib.MVVM.Ui
         public void ClosePopup(WindowViewModel viewModel)
         {
             var binder = _openedPopupBinders[viewModel];
-            
+
             binder?.Close();
             _openedPopupBinders.Remove(viewModel);
         }
 
         public void OpenScreen(WindowViewModel viewModel)
         {
-            if (viewModel == null)
-            {
-                return;
-            }
-            
+            if (viewModel == null) return;
+
             _openedScreenBinder?.Close();
-            
+
             var prefabPath = GetPrefabPath(viewModel);
             var prefab = Resources.Load<GameObject>(prefabPath);
             var instance = Instantiate(prefab, _screenContainer);
             var binder = instance.GetComponent<IWindowBinder>();
-            
+
             binder.Bind(viewModel);
             _openedScreenBinder = binder;
         }

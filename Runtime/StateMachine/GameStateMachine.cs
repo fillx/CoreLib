@@ -20,11 +20,11 @@ namespace CoreLib.GameState
         public void ChangeState<T>() where T : IGameState
         {
             if (_currentState != null)
-                 _currentState.Exit();
+                _currentState.Exit();
 
             _currentState = _states[typeof(T)];
             Dbg.Log($"Change game state to: {_currentState.GetType().Name}", Color.darkOrange);
-             _currentState.Enter();
+            _currentState.Enter();
         }
     }
 }

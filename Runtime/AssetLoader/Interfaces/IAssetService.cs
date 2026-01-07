@@ -9,7 +9,7 @@ namespace CoreLib.AssetLoader
     {
         Task<T> LoadAsset<T>(AssetReference reference, CancellationToken token = default)
             where T : UnityEngine.Object;
-        
+
         Task Preload(IEnumerable<AssetReference> references, CancellationToken token = default);
 
         //TODO В будущем необходимо научится выгружать ассеты которые на уровне
