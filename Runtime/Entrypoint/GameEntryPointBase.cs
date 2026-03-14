@@ -11,9 +11,9 @@ namespace CoreLib.Entrypoint
     {
         protected static GameEntryPointBase Instance;
         protected Coroutines Coroutines;
-        protected DiContainer RootContainer => rootContainer;
+        protected DIContainer RootContainer => rootContainer;
 
-        private readonly DiContainer rootContainer = new();
+        private readonly DIContainer rootContainer = new();
         private UiRootView uiRootView; // добавлено поле
 
         public void Initialize()

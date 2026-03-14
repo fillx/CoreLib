@@ -1,0 +1,13 @@
+﻿#if UNITY_EDITOR
+namespace MVVM.Editor
+{
+    public static class MVVMConstants
+    {
+        public const string NONE = "None";
+        public const string PROPERTY_NAME = "Property Name:";
+        public const string SEARCH = "Search";
+        public const string VIEW_MODEL = "ViewModel:";
+        public const string SCRIPT = "Script:";
+    }
+}
+#endif

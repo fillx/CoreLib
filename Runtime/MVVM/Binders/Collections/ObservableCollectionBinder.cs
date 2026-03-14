@@ -1,0 +1,90 @@
+﻿using System;
+using System.Linq;
+using MVVM.Editor.ViewModels;
+using MVVM.Reactive;
+using UnityEngine;
+
+namespace MVVM.Binders.Collections
+{
+    public abstract class ObservableCollectionBinder : BinderBase
+    {
+        [SerializeField] private string _viewModelPropertyName;
+
+        protected string ViewModelPropertyName => _viewModelPropertyName;
+
+        public abstract Type InputType { get; }
+
+#if UNITY_EDITOR
+
+        public override bool IsBroken()
+        {
+            if (IsBrokenBasic(_viewModelPropertyName, out var sourceViewModelType))
+            {
+                return true;
+            }
+
+            var isBroken = IsBrokenViewModelProperty(sourceViewModelType);
+            return isBroken;
+        }
+
+        public override void SmartReset()
+        {
+            _viewModelPropertyName = null;
+        }
+
+        /// <summary>
+        /// Observable collection can have different generic type, this method allows to handle them abstractly
+        /// </summary>
+        /// <param name="sourceViewModelType"></param>
+        /// <returns></returns>
+        protected abstract bool IsBrokenViewModelProperty(Type sourceViewModelType);
+
+#endif
+    }
+
+    public abstract class ObservableCollectionBinder<TValue> : ObservableCollectionBinder
+    {
+        public override Type InputType => typeof(TValue);
+
+        protected virtual void Start()
+        {
+            Subscriptions.Add(SourceView.ViewModel.Subscribe(viewModel =>
+            {
+                if (viewModel == null)
+                {
+                    return;
+                }
+
+                var inputStream = GetPropertyFromViewModel(viewModel);
+
+                Subscriptions.Add(inputStream.Added.Subscribe(OnValueAdded));
+                Subscriptions.Add(inputStream.Removed.Subscribe(OnValueRemoved));
+            }));
+        }
+
+        private IReadOnlyReactiveCollection<TValue> GetPropertyFromViewModel(IViewModel sourceViewModel)
+        {
+            var vmType = sourceViewModel.GetType();
+            var property = vmType.GetProperty(ViewModelPropertyName);
+            var propertyValue = (IReadOnlyReactiveCollection<TValue>)property?.GetValue(sourceViewModel);
+            return propertyValue;
+        }
+
+        protected abstract void OnValueAdded(TValue viewModel);
+        protected abstract void OnValueRemoved(TValue viewModel);
+
+#if UNITY_EDITOR
+        protected override bool IsBrokenViewModelProperty(Type sourceViewModelType)
+        {
+            var propertyType = typeof(IReadOnlyReactiveCollection<TValue>);
+            var allViewModelProperties = sourceViewModelType.GetProperties();
+            var allValidViewModelProperties =
+                ViewModelsEditorUtility.FilterValidProperties(allViewModelProperties, propertyType);
+            var doesRequiredPropertyExist = allValidViewModelProperties.Any(p => p.Name == ViewModelPropertyName);
+            var isBroken = !doesRequiredPropertyExist;
+
+            return isBroken;
+        }
+#endif
+    }
+}
